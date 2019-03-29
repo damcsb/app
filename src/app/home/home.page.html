@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar>  
+  <ion-title>
+      GitHub
+  </ion-title>
+</ion-toolbar>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content>  
+  <ion-list inset>
+    <ion-item>
+      <ion-label position="floating">Nombre de usuario</ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
+  </ion-list>
+      <ion-button (click)="getRepos()" padding>Buscar</ion-button>
+  <ion-card *ngFor="let repo of names">
+      <ion-card-header>
+          {{ repo.name }}
+      </ion-card-header>
+      <ion-card-content>
+          {{ repo.id }}
+      </ion-card-content>
+  </ion-card>
 </ion-content>
